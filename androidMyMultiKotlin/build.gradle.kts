@@ -18,11 +18,11 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.0.4")
 }
 android {
-    compileSdkVersion(30)
+    compileSdk = 30
     defaultConfig {
         applicationId = "com.example.mymultikotlin.androidMyMultiKotlin"
-        minSdkVersion(24)
-        targetSdkVersion(30)
+        minSdk = 24
+        targetSdk = 30
         versionCode = 1
         versionName = "1.0"
     }
