@@ -3,7 +3,6 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
-    id("kotlin-android-extensions")
 }
 group = "com.example.mymultikotlin"
 version = "1.0-SNAPSHOT"
@@ -46,16 +45,19 @@ kotlin {
     }
 }
 android {
-    compileSdkVersion(29)
+    compileSdk = 30
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdkVersion(24)
-        targetSdkVersion(29)
+        minSdk = 24
+        targetSdk = 30
     }
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
         }
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 val packForXcode by tasks.creating(Sync::class) {

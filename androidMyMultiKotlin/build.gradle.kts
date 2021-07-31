@@ -1,7 +1,6 @@
 plugins {
     id("com.android.application")
     kotlin("android")
-    id("kotlin-android-extensions")
 }
 group = "com.example.mymultikotlin"
 version = "1.0-SNAPSHOT"
@@ -30,5 +29,8 @@ android {
         getByName("release") {
             isMinifyEnabled = false
         }
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
